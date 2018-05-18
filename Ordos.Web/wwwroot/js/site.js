@@ -12,6 +12,11 @@
                         scrollTop: (target.offset().top + 125)
                     }, 1000, "easeInOutExpo");
                 }
+                else if (target[0].id == "contact") {
+                    $('html, body').animate({
+                        scrollTop: (target.offset().top + 80)
+                    }, 1000, "easeInOutExpo");
+                }
                 else {
                     $('html, body').animate({
                         scrollTop: (target.offset().top - 48)
