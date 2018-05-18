@@ -31,7 +31,7 @@ namespace Ordos.Web.Pages
         {
         }
 
-        public async Task OnPostAsync(string returnUrl = null)
+        public async Task<IActionResult> OnPostAsync(string returnUrl = null)
         {
             SendButtonText = "Gracias por tu mensaje!";
             var apiKey = Environment.GetEnvironmentVariable("SENDGRID_KEY");
@@ -44,7 +44,7 @@ namespace Ordos.Web.Pages
             var msg = MailHelper.CreateSingleEmail(from, to, subject, plainTextContent, htmlContent);
             var response = await client.SendEmailAsync(msg);
 
-            //return Page();
+            return RedirectToPage("./GraciasContact");
         }
     }
 }

@@ -9,7 +9,7 @@
             if (target.length) {
                 if (target[0].id == "features") {
                     $('html, body').animate({
-                        scrollTop: (target.offset().top + 80)
+                        scrollTop: (target.offset().top + 125)
                     }, 1000, "easeInOutExpo");
                 }
                 else {
