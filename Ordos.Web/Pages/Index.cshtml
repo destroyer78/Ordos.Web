@@ -7,188 +7,36 @@
 <!DOCTYPE html>
 
 <html>
-<head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <title>@ViewData["Title"]</title>
 
-    <title>@ViewData["Title"]</title>
+        <!-- Styles -->
+        @await Html.PartialAsync("Styles.cshtml")
+    </head>
 
-    <environment include="Development">
-        <!-- Bootstrap core CSS -->
-        <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
-        <link rel="stylesheet" href="~/css/site.css" />
+    <body id="page-top">
+        <!-- Navigation -->
+        @await Html.PartialAsync("Navigation.cshtml")
 
-        <!-- Custom fonts for this template -->
-        <link rel="stylesheet" href="~/css/font-awesome.css" type="text/css">
-        <link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
-        <link href='https://fonts.googleapis.com/css?family=Cabin:700' rel='stylesheet' type='text/css'>
-    </environment>
-    <environment exclude="Development">
-        <link rel="stylesheet" href="https://ajax.aspnetcdn.com/ajax/bootstrap/4.1.1/css/bootstrap.min.css"
-              asp-fallback-href="~/lib/bootstrap/dist/css/bootstrap.min.css"
-              asp-fallback-test-class="sr-only" asp-fallback-test-property="position" asp-fallback-test-value="absolute" />
-        <link rel="stylesheet" href="~/css/site.min.css" asp-append-version="true" />
-    </environment>
-</head>
+        <!-- Intro Header -->
+        @await Html.PartialAsync("Intro.cshtml")
 
-<body id="page-top">
-    <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
-        <div class="container">
-            <a href="#page-top" class="navbar-brand js-scroll-trigger">Ordos</a>
-            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-                Menu
-                <i class="fa fa-bars"></i>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarResponsive">
-                <ul class="navbar-nav ml-auto">
-                    <li class="nav-item">
-                        <a class="nav-link js-scroll-trigger" href="#features">Características</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link js-scroll-trigger" href="#download">Empezar</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link js-scroll-trigger" href="#contact">Contacto</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+        <!-- Features Header -->
+        @await Html.PartialAsync("Features.cshtml")
 
-    <!-- Intro Header -->
-    <header class="masthead">
-        <div class="intro-body">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-8 mx-auto">
-                        <h1 class="brand-heading">Ordos Comtrade Manager</h1>
-                        <p class="intro-text">
-                            Un solución Open Source para los requerimientos SLRP del Coordinador Eléctrico Nacional.
-                        </p>
-                        <a href="#features" class="btn btn-circle js-scroll-trigger">
-                            <i class="fa fa-angle-double-down animated"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </header>
+        <!-- Download Section -->
+        @await Html.PartialAsync("Download.cshtml")
 
+        <!-- Contact Section -->
+        @await Html.PartialAsync("Contact.cshtml")
 
-    <!-- About Section -->
-    <section id="features" class="content-section text-center">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-8 mx-auto">
-                    <h2>Características</h2>
-                    <p>
-                        Ordos es una solución a los requerimientos del Sistema de Lectura Remota de Protecciones (SLRP) del Coordinador Eléctrico Nacional (CEN) de Chile.
-                    </p>
+        <!-- Footer -->
+        @await Html.PartialAsync("Footer.cshtml")
 
-                    <h3>&#9745; IEC61850</h3>
-                    <p>
-                        Ordos es compatible con IEDs multimarca compatibles con la interfaz FTP descrita en IEC61850-8-1
-                    </p>
+        <!-- Scripts -->
+        @await Html.PartialAsync("Scripts.cshtml")
 
-                    <h3>&#9734; Windows, Linux y Mac</h3>
-                    <p>
-                        Ordos está construido sobre tecnología .NetCore: Open Source, compatible con todos los sitemas operativos y máquinas virtuales.
-                    </p>
-
-                    <h3>&#10149; Rutas específicas</h3>
-                    <p>
-                        El sistema exporta las oscilografías extraidas a carpetas específicas para cada IED, según los requerimientos del SLRP.
-                    </p>
-
-                    <h3>&#9844; Ciclos de recolección</h3>
-                    <p>
-                        Los ciclos de recolección de Ordos permiten al sistema cumplir con las exigencias de 2 minutos del SLRP.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-
-    <!-- Download Section -->
-    <section id="download" class="download-section content-section text-center">
-        <div class="container">
-            <div class="col-lg-8 mx-auto">
-                <h2>Download Grayscale</h2>
-                <p>You can download Grayscale for free on the preview page at Start Bootstrap.</p>
-                <a asp-page="/Account/Register" class="btn btn-default btn-lg">Register</a>
-                <a asp-page="/Account/Login" class="btn btn-default btn-lg">Log In</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact" class="content-section text-center">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-8 mx-auto">
-                    <h2>Hablemos!</h2>
-                    <p>
-                        Deja tus datos. Nos contactaremos contigo.
-                    </p>
-                    <form id="contactForm" name="sentMessage" novalidate="novalidate">
-                        <div class="row">
-                            <div class="col-md-12">
-                                <div class="form-group">
-                                    <input class="form-control" id="name" type="text" placeholder="Nombre *" required="required" data-validation-required-message="Please enter your name.">
-                                    <p class="help-block text-danger"></p>
-                                </div>
-                                <div class="form-group">
-                                    <input class="form-control" id="email" type="email" placeholder="Correo *" required="required" data-validation-required-message="Please enter your email address.">
-                                    <p class="help-block text-danger"></p>
-                                </div>
-                                <div class="form-group">
-                                    <input class="form-control" id="phone" type="tel" placeholder="Telefono *" required="required" data-validation-required-message="Please enter your phone number.">
-                                    <p class="help-block text-danger"></p>
-                                </div>
-                            </div>
-                            <div class="clearfix"></div>
-                            <div class="col-lg-12 text-center">
-                                <div id="success"></div>
-                                <button id="sendMessageButton" class="btn btn-default btn-lg" type="submit">Enviar</button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    @*<hr />*@
-
-    <footer>
-        <div class="container text-center">
-            <p>&copy; 2018 - Ordos: Comtrade Manager</p>
-        </div>
-    </footer>
-
-    <environment include="Development">
-        <script src="~/lib/jquery/dist/jquery.js"></script>
-        <script src="~/lib/bootstrap/dist/js/bootstrap.js"></script>
-        <script src="~/lib/jquery-easing/dist/jquery.easing.js"></script>
-        <script src="~/js/site.js" asp-append-version="true"></script>
-    </environment>
-    <environment exclude="Development">
-        <script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-3.3.1.min.js"
-                asp-fallback-src="~/lib/jquery/dist/jquery.min.js"
-                asp-fallback-test="window.jQuery"
-                crossorigin="anonymous"
-                integrity="sha384-K+ctZQ+LL8q6tP7I94W+qzQsfRV2a+AfHIi9k8z8l9ggpc8X+Ytst4yBo/hH+8Fk">
-        </script>
-        <script src="https://ajax.aspnetcdn.com/ajax/bootstrap/4.4.1/bootstrap.min.js"
-                asp-fallback-src="~/lib/bootstrap/dist/js/bootstrap.min.js"
-                asp-fallback-test="window.jQuery && window.jQuery.fn && window.jQuery.fn.modal"
-                crossorigin="anonymous"
-                integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa">
-        </script>
-        <script src="~/js/site.min.js" asp-append-version="true"></script>
-    </environment>
-
-</body>
+    </body>
 </html>
