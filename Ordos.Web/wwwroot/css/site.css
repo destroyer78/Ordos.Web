@@ -204,7 +204,7 @@ a {
 
 .download-section {
     color: white;
-    background: url("/images/downloads-bg.jpg") no-repeat center center scroll;
+    background: url("/images/downloads-bg.png") no-repeat center center scroll;
     background-color: black;
     -webkit-background-size: cover;
     -moz-background-size: cover;
